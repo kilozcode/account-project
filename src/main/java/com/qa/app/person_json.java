@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class person_json {
 	public static String convertPerson(account incomingAccount) throws JsonProcessingException{
 		ObjectMapper mapper = new ObjectMapper();
-		String JsonString = mapper.writeValueAsString(incomingAccount);
+		String JsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(incomingAccount);
 		return JsonString;
 	}
 
