@@ -2,6 +2,7 @@ package com.qa.testing;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.qa.app.account;
 
@@ -15,13 +16,7 @@ public class validUser {
 	}
 	
  public int FirstNameCount(String chosenName){
-	 int count = 0;
-	 for (Map.Entry<Integer, account> entry: map.entrySet()) {
-	 account value = entry.getValue();
-	 if(value.getFirstName().equals(chosenName)) {
-		 count++;
-	 }
- }
- return count;
+	 return map.entrySet().stream().filter(e -> chosenName.equals(e.getValue().getFirstName()))
+      .collect(Collectors.toList()).size();
 }
 }
