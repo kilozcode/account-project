@@ -6,7 +6,7 @@ public class app {
 
 	public static void main(String[] args) {
 		System.out.println("Hello world to the standard out");
-		service inputdata = new service();
+		Service inputdata = new Service();
 		inputdata.addnewaccount("joe", "black", 1);
 		inputdata.addnewaccount("chris", "grind", 2);
 		inputdata.addnewaccount("steve", "blogs", 3);
